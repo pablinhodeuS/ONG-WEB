@@ -1,0 +1,445 @@
+/* General Body and Font Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Un gris muy claro, casi blanco */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #6a9b89; /* Un tono de verde/azul sutil para el encabezado */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-family: 'Roboto Slab', serif; /* Mantener la fuente distintiva */
+    color: #f0f0f0; /* Un blanco ligeramente apagado para el título */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background-color: #5b8778; /* Un tono más oscuro al pasar el ratón */
+}
+
+/* Section Container - General Spacing and Padding */
+.section-container {
+    max-width: 1200px;
+    margin: 40px auto; /* Espacio superior e inferior, centrado */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.section-container h2 {
+    text-align: center;
+    color: #4CAF50; /* Verde vibrante para los títulos de sección */
+    font-size: 2em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/* Grid for Cards - Projects, Events, Donation Campaigns */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 25px; /* Espacio entre las tarjetas */
+    padding: 20px 0;
+}
+
+/* Card Styles */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para empujar el botón al final */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #3f51b5; /* Azul profundo para los títulos de las tarjetas */
+    margin-top: 0;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.95em;
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
+    margin-bottom: 15px;
+}
+
+/* Buttons inside Cards */
+.card button,
+.card .button-link,
+.add-to-cart-button {
+    background-color: #4CAF50; /* Verde brillante */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    text-decoration: none; /* Para enlaces */
+    display: inline-block; /* Para que ocupen el ancho necesario */
+    margin-top: 10px; /* Espacio superior */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card button:hover,
+.card .button-link:hover,
+.add-to-cart-button:hover {
+    background-color: #43A047; /* Verde más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+/* Specific styles for different button types if needed (from previous steps) */
+.add-to-cart-button {
+    background-color: #3498db; /* Azul */
+}
+.add-to-cart-button:hover {
+    background-color: #2980b9;
+}
+
+
+/* Donation Progress Bar */
+.progress-container {
+    margin-top: 40px;
+    background-color: #f0f4f7; /* Fondo sutil para el contenedor de progreso */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.progress-container h3 {
+    color: #2E8B57;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.progress-bar-background {
+    width: 100%;
+    background-color: #e0e0e0; /* Fondo de la barra de progreso gris claro */
+    border-radius: 10px;
+    overflow: hidden;
+    height: 30px; /* Altura de la barra de progreso */
+    margin: 20px auto;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #FFC107; /* Amarillo vibrante para el progreso */
+    width: 0%; /* Se controla con JS */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinear el texto a la derecha dentro del relleno */
+    padding-right: 10px; /* Espacio para el texto del porcentaje */
+    box-sizing: border-box;
+    transition: width 0.5s ease-out; /* Animación de la barra */
+}
+
+#donation-percentage-text {
+    color: #333; /* Color oscuro para el texto del porcentaje para contraste */
+    font-weight: bold;
+    font-size: 0.9em;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.7); /* Sombra para mejor legibilidad */
+}
+
+#donation-current-amount {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2E8B57;
+    margin-top: 15px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+/* Notifications */
+.notifications-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notification {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 12px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-size: 0.9em;
+    color: #333;
+    animation: fadeInOut 5s forwards;
+    opacity: 0; /* Starts hidden */
+}
+
+.notification.success {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.notification.error {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.notification.info {
+    background-color: #d1ecf1;
+    border-color: #17a2b8;
+    color: #0c5460;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Estilos para las campañas de donación en la sección de donaciones (mantener de antes, si ya lo tenías) */
+.donation-campaigns-list {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.donation-campaign-card {
+    padding: 20px;
+    text-align: center;
+}
+
+.donation-campaign-card h3 {
+    color: #2E8B57;
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.donation-campaign-card p {
+    color: #555;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el carrito de donaciones (mantener de antes, si ya lo tenías) */
+.cart-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-details strong {
+    color: #2E8B57;
+    font-size: 1.1em;
+}
+
+.cart-item-details span {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.cart-item-actions .remove-item-button {
+    background-color: #e74c3c; /* Rojo */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item-actions .remove-item-button:hover {
+    background-color: #c0392b;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 25px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2E8B57;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.cart-actions .button-link {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cart-actions .button-link:hover {
+    background-color: #2980b9;
+}
+
+.cart-actions .button-link.clear-cart {
+    background-color: #f39c12; /* Naranja */
+}
+
+.cart-actions .button-link.clear-cart:hover {
+    background-color: #e67e22;
+}
+
+.cart-actions .button-link.checkout {
+    background-color: #27ae60; /* Verde */
+}
+
+.cart-actions .button-link.checkout:hover {
+    background-color: #2ecc71;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 30px;
+}
+
+/* Estilos para el buscador y filtros de eventos (mantener de antes, si ya lo tenías) */
+.search-container {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+}
+
+.search-container input[type="text"],
+.search-container select {
+    padding: 12px 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1em;
+    flex: 1; /* Permite que los campos crezcan */
+    min-width: 200px; /* Ancho mínimo para los campos */
+}
+
+.search-container button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Responsividad para el buscador */
+@media (max-width: 600px) {
+    .search-container form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-container input[type="text"],
+    .search-container select,
+    .search-container button[type="submit"] {
+        width: 100%;
+        min-width: unset;
+    }
+}
